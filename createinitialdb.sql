@@ -102,6 +102,18 @@ CREATE TABLE `user_statistics` (
 ) ;
 
 
+CREATE TABLE `player_match` (
+  `playermatchid` int NOT NULL AUTO_INCREMENT,
+  `userid1` int NOT NULL,
+  `userid2` int NOT NULL,
+  `match_status` varchar(25) NOT NULL COMMENT 'MATCHED, ACCEPTED',
+  `userid1_feedback` varchar(25) default 'NOTGIVEN' COMMENT 'GIVEN, NOTGIVEN',
+  `userid2_feedback` varchar(25) default 'NOTGIVEN' COMMENT 'GIVEN, NOTGIVEN',
+  `createdate` date NOT NULL,
+  `createdby` varchar(64) NOT NULL,
+  PRIMARY KEY (`playermatchid`)
+);
+
 
 LOCK TABLES `user_statistics` WRITE;
 
